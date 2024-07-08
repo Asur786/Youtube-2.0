@@ -1,0 +1,20 @@
+@import "./_base.scss";
+
+.app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    // overflow-y: scroll;
+  }
+  .app-container {
+    display: flex;
+    position: absolute;
+    width: 100vw;
+    top: 10vh;
+    overflow-y: auto;
+  }
+  
+  .main-container{
+    height: 100vh;
+    display: flex;
+  }
