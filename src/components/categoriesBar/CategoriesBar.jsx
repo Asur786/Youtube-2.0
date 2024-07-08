@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import "./_categoriesBar.scss"
-
-const keywords = [
+import { useDispatch } from "react-redux";
+import { getPopularVideo,getsearchVideo } from '../../redux/slice/videoSlice';
+const category = [
   'All',
   'React js',
   'Angular js',
@@ -22,24 +23,34 @@ const keywords = [
 ]
 const CategoriesBar = () => {
   const [activeElement,setActiveElement]=useState('All')
+  console.log(activeElement)
 
+  const dispatch = useDispatch();
   const handleClick = (value)=>{
-    setActiveElement(value)
-  }
+    setActiveElement(value);
+    if (value==="All") {
+      dispatch(getPopularVideo());
+    }
+    else{
+      dispatch(getsearchVideo(value));
+    }
+  };
 
   return (
     <div className="CategoriesBar">
 
       {
-        keywords.map((value,i)=><span
+        category.map((value,i)=>(
+        <span
          onClick={()=> handleClick(value)}
          key={i}
-         className={activeElement===value? 'active' : ''}>
+         className={activeElement===value ? 'active' : ''}
+         >
           {value}
          </span>)
-      }
+      )}
     </div>
-  )
+  );
 }
 
 export default CategoriesBar

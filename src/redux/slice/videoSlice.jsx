@@ -77,6 +77,22 @@ export const videoSlice = createSlice({
         builder.addCase(getPopularVideo.rejected, (state) =>{
             state.loading=false;
         });
+
+        builder.addCase(getsearchVideo.fulfilled, (state, action) => {
+            const _videos = action.payload.data.items;
+            state.videos =
+              state.category === category ? [...state.videos, ..._videos] : _videos;
+            state.nextPageToken = action.payload.data.nextPageToken;
+            state.loading = false;
+            state.category = category;
+          });
+          builder.addCase(getsearchVideo.pending, (state) => {
+            state.loading = true;
+          });
+          builder.addCase(getsearchVideo.rejected, (state) => {
+            state.loading = false;
+          });
+          
     },
 });
 

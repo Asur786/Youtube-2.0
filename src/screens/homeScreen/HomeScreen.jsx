@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import {Col, Container,Row } from "react-bootstrap"
 import CategoriesBar from "../../components/categoriesBar/CategoriesBar"
 import Video from "../../components/video/Video"
 import InfiniteScroll from "react-infinite-scroll-component"; 
