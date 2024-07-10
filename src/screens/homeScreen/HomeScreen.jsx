@@ -54,7 +54,7 @@ const HomeScreen = () => {
             ))
             : [...Array(20)].map((id)=>(
                 <div className="col" key={id}>
-                  <SkeletonVideo/>
+                  <SkeletonVideo height={180} width="100%"/>
                 </div>
             ))}
           

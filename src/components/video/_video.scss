@@ -7,14 +7,13 @@
   font-size: 0.9rem;
   .top {
     position: relative;
-    
+    margin-bottom: 0.5rem;
     .lazy-load-image-background {
       width: 100%;
     }
 
     img {
       width: 100%;
-      height: 100%;
       border-radius: 15px;
     }
 

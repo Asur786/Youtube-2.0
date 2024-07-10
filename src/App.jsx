@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 
 
 import Layout from "./layout"
+import WatchScreen from "./screens/watchScreen/WatchScreen";
 
 
 const App = () => {
@@ -27,6 +28,9 @@ const App = () => {
         <Route path='/' element={<Layout children={<HomeScreen/>}/>}/>
         <Route path='/auth' element={<LoginScreen />} />
         <Route path="*" element={<Navigate to="/" />} />
+
+        <Route path='/watch/:id' element={<Layout children={<WatchScreen/>}/>} />
+
         <Route path='/search' element={<Layout><h1>Search Results</h1></Layout>} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
